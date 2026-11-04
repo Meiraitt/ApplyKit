@@ -1,0 +1,41 @@
+{
+  "name": "applykit-api",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "worker": "tsx src/worker.ts",
+    "bot": "tsx src/bot.ts",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "db:migrate": "tsx src/migrate.ts"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0",
+    "docx": "^9.7.1",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "pdfjs-dist": "5.4.624",
+    "pg": "^8.16.3",
+    "pg-boss": "10.3.3",
+    "puppeteer": "^25.14.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.15.0",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.2.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4"
+  },
+  "license": "MIT"
+}

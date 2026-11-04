@@ -1,0 +1,37 @@
+{
+  "name": "Your Full Name",
+  "headline": "Software Developer",
+  "contact": {
+    "email": "you@example.com",
+    "location": "Your city, country"
+  },
+  "summary": "Replace this fictional example with your confirmed professional background.",
+  "skills": ["React", "TypeScript"],
+  "experiences": [
+    {
+      "id": "company-1",
+      "company": "Example Company",
+      "role": "Frontend Developer",
+      "period": "01/2025 – 12/2025",
+      "kind": "work",
+      "facts": [
+        {
+          "id": "company-1-f1",
+          "text": "Fictional example: implemented React components with TypeScript for a registration form.",
+          "area": "frontend"
+        },
+        {
+          "id": "company-1-f2",
+          "text": "Fictional example: integrated the form with an existing REST API; did not implement that API.",
+          "area": "frontend"
+        }
+      ]
+    }
+  ],
+  "education": [
+    "Replace with your actual education, dates and completion status"
+  ],
+  "languages": ["Replace with your confirmed language proficiency"],
+  "studies": [],
+  "notes": "EXAMPLE PROFILE. Replace all data before generating a CV. Record limited or partial authorship alongside the facts. Never invent metrics."
+}
