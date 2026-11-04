@@ -17,9 +17,7 @@ if (
 )
   throw new Error("A worker is already active.");
 lock.on("error", () => process.exit(1));
-console.log(
-  `Recovered interrupted jobs: ${await recoverInterruptedJobs()}`,
-);
+console.log(`Recovered interrupted jobs: ${await recoverInterruptedJobs()}`);
 
 // Separate queue consumers keep each CV's completion/retry independent. Local
 // inference remains serial; Codex can process a bounded user-selected batch.
