@@ -1,0 +1,317 @@
+{
+  "name": "Sample Developer",
+  "headline": "Software Developer | Web applications",
+  "contact": {
+    "email": "candidate@example.com",
+    "linkedin": "https://www.linkedin.com/in/example/",
+    "location": "Example City"
+  },
+  "summary": "Desenvolvedor de aplicações web para agendamento cultural, catálogos de bibliotecas e serviços de refeições. Cenário inteiramente fictício para testar seleção de evidências.",
+  "skills": [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "Node.js",
+    "NestJS",
+    "PostgreSQL",
+    "REST APIs",
+    "GraphQL",
+    "Redux",
+    "Zustand",
+    "React Query",
+    "Tailwind CSS",
+    "Material UI",
+    "Git",
+    "Jest",
+    "Vitest",
+    "Testing Library",
+    "Playwright",
+    "Cypress",
+    "BDD",
+    "Agile",
+    "Docker",
+    "AWS",
+    "GitHub Actions"
+  ],
+  "experiences": [
+    {
+      "id": "atlas",
+      "company": "Atlas Studio",
+      "role": "Full Stack Developer",
+      "period": "04/2024 – 10/2024",
+      "kind": "work",
+      "facts": [
+        {
+          "id": "l1",
+          "text": "Criou a tela de agendamento de visitas de um museu com React, TypeScript, Next.js, Redux e Tailwind CSS, ajustando a navegação entre datas disponíveis.",
+          "area": "frontend",
+          "summary": "interfaces e melhorias de UI/UX",
+          "summaryEn": "web interfaces and UI/UX improvements",
+          "cvText": "Criou a tela de agendamento de visitas de um museu com React, TypeScript, Next.js, Redux e Tailwind CSS, ajustando a navegação entre datas disponíveis."
+        },
+        {
+          "id": "l2",
+          "text": "Realizou otimizações de renderização e cache na lista de horários do museu para evitar recálculos de filtros já selecionados.",
+          "area": "frontend",
+          "summary": "otimizações de renderização e cache",
+          "summaryEn": "frontend rendering and caching optimizations",
+          "cvText": "Realizou otimizações de renderização e cache na lista de horários do museu para evitar recálculos de filtros já selecionados."
+        },
+        {
+          "id": "l3",
+          "text": "Trabalhou em um endpoint administrativo Node.js e NestJS para revisar o catálogo de exposições e conferir permissões de curadores; a implementação foi compartilhada com outra pessoa.",
+          "area": "backend",
+          "summary": "controle de permissões e cargos",
+          "summaryEn": "permission and role management",
+          "cvText": "Trabalhou em um endpoint administrativo Node.js e NestJS para revisar o catálogo de exposições e conferir permissões de curadores; a implementação foi compartilhada com outra pessoa."
+        },
+        {
+          "id": "l4",
+          "text": "Trabalhou em um endpoint Node.js e NestJS para salvar drafts de roteiros de visitas. Implementou a hidratação do estado no frontend para retomar a edição de um roteiro salvo.",
+          "area": "fullstack",
+          "summary": "persistência de drafts com restauração do estado no frontend",
+          "summaryEn": "draft persistence and frontend state restoration",
+          "cvText": "Trabalhou em um endpoint Node.js e NestJS para salvar drafts de roteiros de visitas. Implementou a hidratação do estado no frontend para retomar a edição de um roteiro salvo."
+        },
+        {
+          "id": "l5",
+          "text": "Contexto técnico do agendamento fictício: React, TypeScript, Next.js, Redux, Tailwind CSS, Node.js, NestJS e PostgreSQL.",
+          "usage": "context"
+        }
+      ]
+    },
+    {
+      "id": "beacon",
+      "company": "Beacon Labs",
+      "role": "Software Engineer",
+      "period": "02/2022 – 03/2024",
+      "kind": "work",
+      "facts": [
+        {
+          "id": "k1",
+          "text": "Desenvolveu aplicações React, Next.js e TypeScript para a Reading Harbor, plataforma de clubes de leitura com 25 mil usuários cadastrados. A contagem representa o produto e não aquisição individual.",
+          "area": "frontend",
+          "summary": "interfaces React para catálogos digitais",
+          "summaryEn": "React interfaces for digital catalogs",
+          "cvText": "Desenvolveu aplicações React, Next.js e TypeScript para a Reading Harbor, plataforma de clubes de leitura com 25 mil usuários cadastrados."
+        },
+        {
+          "id": "k2",
+          "text": "Entregou funcionalidades ponta a ponta de empréstimo de equipamentos de áudio com React e Node.js, integrando APIs REST e GraphQL do catálogo de acervo.",
+          "area": "fullstack",
+          "summary": "entregas ponta a ponta e integrações REST e GraphQL",
+          "summaryEn": "end-to-end delivery and REST and GraphQL integrations",
+          "cvText": "Entregou funcionalidades ponta a ponta de empréstimo de equipamentos de áudio com React e Node.js, integrando APIs REST e GraphQL do catálogo de acervo."
+        },
+        {
+          "id": "k3",
+          "text": "Criou componentes reutilizáveis para um painel de acervo, refatorou código legado de filtros e migrou o gerenciamento de estado de seleção de Context API para Zustand.",
+          "area": "frontend",
+          "summary": "componentes reutilizáveis e gerenciamento de estado",
+          "summaryEn": "reusable components and frontend state management",
+          "cvText": "Criou componentes reutilizáveis para um painel de acervo, refatorou código legado de filtros e migrou o gerenciamento de estado de seleção de Context API para Zustand."
+        },
+        {
+          "id": "k4",
+          "text": "Implementou otimizações de renderização, lazy loading e code splitting no catálogo ilustrado e identificou falhas de paginação em produção.",
+          "area": "frontend",
+          "summary": "otimizações de renderização, lazy loading e code splitting",
+          "summaryEn": "rendering optimizations, lazy loading, and code splitting",
+          "cvText": "Implementou otimizações de renderização, lazy loading e code splitting no catálogo ilustrado e identificou falhas de paginação em produção."
+        },
+        {
+          "id": "k5",
+          "text": "Apoiou revisões de código do catálogo, documentou decisões de componentes e preparou um exercício de integração para novas pessoas da equipe.",
+          "cvText": "Apoiou revisões de código do catálogo, documentou decisões de componentes e preparou um exercício de integração para novas pessoas da equipe."
+        },
+        {
+          "id": "k6",
+          "text": "Ferramentas do catálogo fictício: Node.js, React, TypeScript, Next.js, React Query, GraphQL, Material UI, Tailwind CSS, AWS, Docker e GitHub Actions.",
+          "usage": "context"
+        },
+        {
+          "id": "k7",
+          "text": "Implementou um endpoint de leaderboard em Node.js para ordenar a pontuação de um desafio de leitura da Reading Harbor.",
+          "area": "backend",
+          "summary": "endpoints de leaderboard",
+          "summaryEn": "leaderboard endpoints",
+          "cvText": "Implementou um endpoint de leaderboard em Node.js para ordenar a pontuação de um desafio de leitura da Reading Harbor."
+        },
+        {
+          "id": "k8",
+          "text": "Implementou endpoints Node.js da bridge de bibliotecas para consultar dados e saldos de créditos entre catálogos parceiros; corrigiu regras de negócio de empréstimos.",
+          "area": "backend",
+          "summary": "endpoints para consulta de dados e saldos entre blockchains",
+          "summaryEn": "endpoints for data and balance queries across blockchains",
+          "cvText": "Implementou endpoints Node.js da bridge de bibliotecas para consultar dados e saldos de créditos entre catálogos parceiros; corrigiu regras de negócio de empréstimos."
+        },
+        {
+          "id": "k9",
+          "text": "No painel de acervo, substituiu Context API por Zustand para organizar o estado de seleção dos filtros.",
+          "usage": "context"
+        },
+        {
+          "id": "k10",
+          "text": "Utilizou Jest, Vitest, Testing Library e Playwright em testes de componentes React das telas de busca do catálogo da Beacon.",
+          "area": "quality",
+          "summary": "testes de aplicações",
+          "summaryEn": "application testing",
+          "cvText": "Utilizou Jest, Vitest, Testing Library e Playwright em testes de componentes React das telas de busca do catálogo da Beacon."
+        },
+        {
+          "id": "k11",
+          "text": "Consultou dados do catálogo de acervo em PostgreSQL na Beacon.",
+          "usage": "context"
+        },
+        {
+          "id": "k23",
+          "text": "Investigou um incidente de notificações duplicadas na tela de devoluções; identificou listeners registrados duas vezes, removeu a inscrição redundante e validou uma única notificação por devolução.",
+          "cvText": "Investigou um incidente de notificações duplicadas na tela de devoluções; identificou listeners registrados duas vezes, removeu a inscrição redundante e validou uma única notificação por devolução."
+        },
+        {
+          "id": "k24",
+          "text": "Separou Views do catálogo e componentes de filtros para isolar as responsabilidades de apresentação da página de empréstimos.",
+          "cvText": "Separou Views do catálogo e componentes de filtros para isolar as responsabilidades de apresentação da página de empréstimos."
+        },
+        {
+          "id": "k25",
+          "text": "Coordenou a entrega do calendário de oficinas de leitura, organizando a validação com bibliotecários e comunicando a ordem de liberação das funcionalidades.",
+          "cvText": "Coordenou a entrega do calendário de oficinas de leitura, organizando a validação com bibliotecários e comunicando a ordem de liberação das funcionalidades."
+        },
+        {
+          "id": "k14",
+          "text": "Consultou objetos no AWS S3 e verificou recursos existentes de EC2, RDS e Lambda no ambiente do catálogo.",
+          "usage": "context"
+        },
+        {
+          "id": "k15",
+          "text": "Criou imagens Docker para executar o catálogo em um ambiente de demonstração.",
+          "area": "backend",
+          "cvText": "Criou imagens Docker para executar o catálogo em um ambiente de demonstração."
+        },
+        {
+          "id": "k16",
+          "text": "Alterou workflows existentes de GitHub Actions para executar a suíte de componentes antes da demonstração.",
+          "area": "backend",
+          "cvText": "Alterou workflows existentes de GitHub Actions para executar a suíte de componentes antes da demonstração."
+        }
+      ]
+    },
+    {
+      "id": "cedar-dev",
+      "company": "Cedar Labs",
+      "role": "Frontend Developer",
+      "period": "06/2020 – 01/2022",
+      "kind": "work",
+      "facts": [
+        {
+          "id": "z1",
+          "text": "Desenvolveu interfaces React, Next.js e TypeScript para um portal de refeições universitárias com mais de 80 mil carteiras cadastradas. As carteiras descrevem a escala do produto, não aquisição pessoal.",
+          "area": "frontend",
+          "summary": "interfaces React para catálogos digitais",
+          "summaryEn": "React interfaces for digital catalogs",
+          "cvText": "Desenvolveu interfaces React, Next.js e TypeScript para um portal de refeições universitárias com mais de 80 mil carteiras cadastradas."
+        },
+        {
+          "id": "z2",
+          "text": "Converteu requisitos de cardápios sazonais em telas de pedidos, revisando as regras com as equipes de produto e atendimento.",
+          "cvText": "Converteu requisitos de cardápios sazonais em telas de pedidos, revisando as regras com as equipes de produto e atendimento."
+        },
+        {
+          "id": "z3",
+          "text": "Evoluiu componentes reutilizáveis e o Design System do portal de refeições, corrigiu bugs de navegação e realizou otimizações de performance na seleção de cardápios.",
+          "area": "frontend",
+          "summary": "componentes reutilizáveis, Design System e performance",
+          "summaryEn": "reusable components, design system improvements, and performance optimization",
+          "cvText": "Evoluiu componentes reutilizáveis e o Design System do portal de refeições, corrigiu bugs de navegação e realizou otimizações de performance na seleção de cardápios."
+        },
+        {
+          "id": "z4",
+          "text": "Integrou o portal de refeições com APIs REST de calendário e serviços externos, submetendo alterações a code reviews e discutindo critérios de aceite em cerimônias ágeis.",
+          "area": "frontend",
+          "summary": "integrações com APIs REST e serviços externos",
+          "summaryEn": "REST API and external service integrations",
+          "cvText": "Integrou o portal de refeições com APIs REST de calendário e serviços externos, submetendo alterações a code reviews e discutindo critérios de aceite em cerimônias ágeis."
+        },
+        {
+          "id": "z5",
+          "text": "Tecnologias do portal fictício: TypeScript, React, Next.js, JavaScript, Material UI, REST APIs, Git e Agile.",
+          "usage": "context"
+        },
+        {
+          "id": "z6",
+          "text": "Atuou principalmente em QA manual do fluxo de refeições e registrou cenários de aceite em BDD; utilizou Cypress, Jest, Vitest e Testing Library em testes do portal.",
+          "area": "quality",
+          "summary": "QA, testes manuais e documentação de tarefas em BDD",
+          "summaryEn": "manual QA and BDD task documentation",
+          "cvText": "Atuou principalmente em QA manual do fluxo de refeições e registrou cenários de aceite em BDD; utilizou Cypress, Jest, Vitest e Testing Library em testes do portal."
+        },
+        {
+          "id": "z7",
+          "text": "Corrigiu arredondamentos de preços no backend de refeições e consultou dados de pedidos para reproduzir divergências relatadas ao atendimento.",
+          "cvText": "Corrigiu arredondamentos de preços no backend de refeições e consultou dados de pedidos para reproduzir divergências relatadas ao atendimento."
+        },
+        {
+          "id": "z8",
+          "text": "O portal de refeições registrou picos de 600 mil acessos mensais. Esse volume caracteriza o produto, sem atribuição de crescimento ao candidato.",
+          "usage": "context"
+        },
+        {
+          "id": "z9",
+          "text": "Utilizou Datadog para correlacionar erros do calendário de refeições com logs de requisições.",
+          "area": "quality",
+          "cvText": "Utilizou Datadog para correlacionar erros do calendário de refeições com logs de requisições."
+        }
+      ]
+    },
+    {
+      "id": "cedar-intern",
+      "company": "Cedar Labs",
+      "role": "Frontend Intern",
+      "period": "02/2020 – 05/2020",
+      "kind": "work",
+      "facts": [
+        {
+          "id": "i1",
+          "text": "Construiu componentes React e TypeScript para o formulário de preferências alimentares de um portal universitário.",
+          "area": "frontend",
+          "summary": "funcionalidades frontend com React e TypeScript",
+          "summaryEn": "frontend features with React and TypeScript",
+          "cvText": "Construiu componentes React e TypeScript para o formulário de preferências alimentares de um portal universitário."
+        },
+        {
+          "id": "i2",
+          "text": "Acompanhou uma pessoa mentora na integração do calendário REST e na revisão de correções de rótulos do formulário.",
+          "area": "frontend",
+          "summary": "integrações com APIs e correção de bugs",
+          "summaryEn": "API integrations and bug fixes",
+          "cvText": "Acompanhou uma pessoa mentora na integração do calendário REST e na revisão de correções de rótulos do formulário."
+        }
+      ]
+    },
+    {
+      "id": "personal-project",
+      "company": "Personal project",
+      "role": "Developer",
+      "period": "2019",
+      "kind": "project",
+      "facts": [
+        {
+          "id": "p1",
+          "text": "Desenvolveu um simulador pessoal de empréstimos de livros usando programação orientada a objetos para representar exemplares e reservas.",
+          "area": "backend",
+          "cvText": "Desenvolveu um simulador pessoal de empréstimos de livros usando programação orientada a objetos para representar exemplares e reservas."
+        }
+      ]
+    }
+  ],
+  "education": [
+    "Example College — Computer Science | 09/2018 – 06/2022 (completed)",
+    "Example Training Center — Software Testing | 2021",
+    "Example Community School — Digital Media | 02/2016 – 11/2016"
+  ],
+  "languages": [],
+  "notes": "FICTIONAL TEST SCENARIO. All employers, products, dates and contributions describe invented cultural and campus software. Portuguese evidence intentionally exercises Portuguese CV validation. Product scale is not personal acquisition. Tools alone do not establish practices; preserve partial authorship and study-only knowledge.",
+  "studies": ["Supabase", "Edge Functions", "RLS"]
+}
