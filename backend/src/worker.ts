@@ -18,7 +18,7 @@ if (
   throw new Error("A worker is already active.");
 lock.on("error", () => process.exit(1));
 console.log(
-  `Tarefas interrompidas recuperadas: ${await recoverInterruptedJobs()}`,
+  `Recovered interrupted jobs: ${await recoverInterruptedJobs()}`,
 );
 
 // Separate queue consumers keep each CV's completion/retry independent. Local
