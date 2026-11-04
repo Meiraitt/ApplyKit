@@ -1,0 +1,14 @@
+node_modules
+**/node_modules
+**/dist
+**/package-lock.json
+runtime
+data
+release
+coverage
+config/.env
+config/*.env
+
+.maintenance
+
+source-manifest.json

@@ -1,0 +1,27 @@
+{
+  "name": "applykit",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "lint": "node scripts/lint.mjs",
+    "lint:fix": "node scripts/lint.mjs --fix",
+    "format": "node scripts/format.mjs --write",
+    "format:check": "node scripts/format.mjs --check",
+    "db:up": "docker compose --env-file config/.env up -d postgres",
+    "db:stop": "docker compose --env-file config/.env stop postgres"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.13.0",
+    "prettier": "3.6.2",
+    "typescript-eslint": "^8.72.0"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "overrides": {
+    "minimatch": "^11.0.1"
+  },
+  "license": "MIT"
+}
