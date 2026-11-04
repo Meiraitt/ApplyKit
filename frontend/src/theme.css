@@ -1,0 +1,110 @@
+@import "tailwindcss" source(none);
+@source "./";
+
+@theme {
+  --color-canvas: #161a1c;
+  --color-panel: #1d2224;
+  --color-line: #303739;
+  --color-muted: #a2abad;
+  --color-accent: #9ac8ab;
+  --breakpoint-tablet: 45.0625rem;
+  --breakpoint-desktop: 61.25rem;
+  --font-sans: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-sans);
+    color: #e6eae7;
+    background: var(--color-canvas);
+    font-synthesis: none;
+    font-size: 14px;
+    color-scheme: dark;
+  }
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+  body {
+    min-height: 100dvh;
+  }
+  button,
+  a {
+    touch-action: manipulation;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button:focus-visible,
+  a:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+  h1 {
+    @apply mb-2 text-2xl font-semibold tracking-tight desktop:text-[28px];
+  }
+  h2 {
+    @apply text-[17px] font-semibold;
+  }
+  h3 {
+    @apply mb-3 text-[15px] font-semibold;
+  }
+  h4 {
+    @apply mb-3 text-sm font-semibold;
+  }
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+  small {
+    @apply text-xs text-muted;
+  }
+  label {
+    @apply mb-5 block text-xs font-medium;
+  }
+  label > span {
+    @apply ml-1 font-normal text-muted;
+  }
+  input,
+  textarea,
+  select {
+    @apply mt-2 block w-full min-w-0 max-w-full rounded-[5px] border border-[#3a4446] bg-[#171d1f] px-3 py-2.5 text-base leading-snug text-[#e5eae7] outline-none tablet:text-sm;
+  }
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-accent ring-2 ring-accent/10;
+  }
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-[#7e8c91];
+  }
+  textarea {
+    @apply min-h-[100px] resize-y;
+  }
+  summary {
+    @apply cursor-pointer text-xs text-[#b7c7bd];
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}

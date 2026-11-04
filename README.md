@@ -1,6 +1,6 @@
 # ApplyKit
 
-Persistent job tracking, background processing, application status and optional private Telegram workflows.
+Responsive dashboard, job cards, review feedback and downloads, with a single local development launcher.
 
 Install Node.js 24 and run `npm ci` followed by `npm run setup`. Configuration lives in `config/.env`; the candidate profile lives in `data/profile.json`. Replace all example information before generating a CV.
 

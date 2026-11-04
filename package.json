@@ -3,17 +3,21 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
+    "start": "node scripts/dev.mjs",
+    "backend:dev": "npm --prefix backend run dev",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "build": "node scripts/tasks.mjs build",
+    "test": "node scripts/tasks.mjs test",
+    "dev": "node scripts/dev.mjs",
+    "check": "node scripts/tasks.mjs check",
     "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
     "lint": "node scripts/lint.mjs",
     "lint:fix": "node scripts/lint.mjs --fix",
     "format": "node scripts/format.mjs --write",
     "format:check": "node scripts/format.mjs --check",
     "db:up": "docker compose --env-file config/.env up -d postgres",
-    "db:stop": "docker compose --env-file config/.env stop postgres",
-    "check": "node backend/node_modules/typescript/bin/tsc --noEmit -p backend/tsconfig.json",
-    "build": "npm --prefix backend run build",
-    "test": "node -e \"import('./scripts/test-database.mjs').then(m => m.prepareTestDatabase())\" && npm --prefix backend test",
-    "doctor": "node scripts/doctor.mjs"
+    "db:stop": "docker compose --env-file config/.env stop postgres"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",
