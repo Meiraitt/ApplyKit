@@ -12,7 +12,8 @@
     "db:stop": "docker compose --env-file config/.env stop postgres",
     "check": "node backend/node_modules/typescript/bin/tsc --noEmit -p backend/tsconfig.json",
     "build": "npm --prefix backend run build",
-    "test": "npm --prefix backend test"
+    "test": "node -e \"import('./scripts/test-database.mjs').then(m => m.prepareTestDatabase())\" && npm --prefix backend test",
+    "doctor": "node scripts/doctor.mjs"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",

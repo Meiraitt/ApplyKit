@@ -11,7 +11,22 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: applykit
+          POSTGRES_PASSWORD: test-only-password
+          POSTGRES_DB: applykit
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U applykit -d applykit"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
     env:
+      DATABASE_URL: postgresql://applykit:test-only-password@127.0.0.1:5432/applykit
       PUPPETEER_SKIP_DOWNLOAD: "true"
     steps:
       - uses: actions/checkout@v4
