@@ -144,6 +144,13 @@ try {
 
   await compose("exec", "-T", "worker", "node", "/tmp/docker-render-smoke.mjs");
   await compose(
+    "cp",
+    resolve(root, "scripts/docker-cli-smoke.mjs"),
+    "worker:/tmp/docker-cli-smoke.mjs",
+  );
+
+  await compose("exec", "-T", "worker", "node", "/tmp/docker-cli-smoke.mjs");
+  await compose(
     "exec",
     "-T",
     "app",

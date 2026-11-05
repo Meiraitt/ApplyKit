@@ -2,6 +2,8 @@
 
 Set `CV_PROVIDER=claude`, install/authenticate Claude Code and configure `CLAUDE_EXECUTABLE` if needed. `CLAUDE_MODEL` is optional.
 
+With Docker, the binary is included. Run `docker compose exec worker claude auth login`. Credentials persist in the private CLI volume; the host executable setting is not used. Both execution modes use the root `.env`.
+
 The adapter requires compatible structured-output and restriction flags: `--safe-mode`, `--tools`, `--json-schema` and JSON output. Claude Code 1.x is rejected by diagnostics. Verify your installed version with `npm run doctor`.
 
 The same evidence-grounded writer/reviewer contract used by Codex applies. Unknown executable shims, incomplete responses, malformed JSON, timeouts and output-contract violations fail without approval.
