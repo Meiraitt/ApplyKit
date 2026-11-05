@@ -1,8 +1,63 @@
 # ApplyKit
 
-ApplyKit is a local-first job tracker that writes job-specific CVs from your confirmed experience and reviews them in a separate AI call. Save a job description or public URL, inspect reviewer feedback, download PDF/DOCX, and track applications in a weekly dashboard. An optional private Telegram bot provides the same core workflow.
+**Turn your confirmed experience into job-specific CVs, then keep track of each application.**
+
+ApplyKit brings job descriptions, CV versions, independent AI review, and application tracking into one local workspace. Choose a local model, an API provider, or an authenticated CLI agent. Your profile supplies the facts; the job description guides which evidence the writer emphasizes.
+
+[Get started](#quick-start-with-docker) · [Configure your profile](#configure-your-profile) · [Choose an AI provider](#choose-one-ai-provider) · [Screenshots](#screenshots)
+
+![ApplyKit interface tour: weekly dashboard, saved jobs, CV preview, reviewer feedback, and adding a job](docs/assets/applykit-demo.gif)
+
+_Interface tour made from real application screenshots with fictional jobs and a fictional profile. CVs and review results were prepared for the demo; this animation does not show a live AI run or represent generation speed. Static screenshots are available below._
+
+## What you can do
+
+- **Save a job** from a pasted description or a public URL. Some sites block extraction; paste the description when needed.
+- **Generate and review a tailored CV.** A separate reviewer checks the draft against your confirmed evidence and the job. Automatic corrections are bounded; unresolved issues remain visible for another revision attempt.
+- **Read the feedback and refine a draft.** See what needs correction and request another pass using the reviewer's feedback.
+- **Download approved versions** as PDF or DOCX, keeping earlier versions attached to the job.
+- **Track applications** with submission dates, the CV version you sent, and weekly saved/applied counts.
+- **Use Telegram optionally** to save jobs and manage CVs through a private bot restricted to your configured chat.
+
+The generation workflow runs in a separate worker backed by a PostgreSQL queue, so saving another job does not depend on waiting for the current CV.
+
+## From job description to application
+
+1. Configure your factual profile and choose an AI provider.
+2. Save a job and choose English or Brazilian Portuguese for its CV.
+3. Inspect the CV and review report. Address any remaining feedback before downloading.
+4. Apply through the employer's channel, then record the application date and submitted version in ApplyKit.
+
+"Ready" means the configured checks passed. It is not a guarantee of factual perfection, an ATS score, or a hiring outcome; read the final document before sending it.
 
 The interface and prompts are English. CVs support English and Brazilian Portuguese. ApplyKit does not search for jobs or submit applications automatically.
+
+## Screenshots
+
+<details>
+<summary>Weekly dashboard and saved jobs</summary>
+
+![Dashboard showing saved jobs, applications, approved CVs, and weekly activity](docs/assets/dashboard.png)
+
+![Saved job cards with application status and CV generation status](docs/assets/jobs.png)
+
+</details>
+
+<details>
+<summary>CV preview and actionable reviewer feedback</summary>
+
+![Job detail panel with PDF and DOCX downloads and the CV content preview](docs/assets/cv-preview.png)
+
+![Reviewer feedback explaining a factual issue and the recommended correction](docs/assets/review-feedback.png)
+
+</details>
+
+<details>
+<summary>Add a job</summary>
+
+![New job form with a pasted description, job title, company, and CV language](docs/assets/new-job.png)
+
+</details>
 
 ## Quick start with Docker
 
