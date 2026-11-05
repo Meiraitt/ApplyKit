@@ -1,9 +1,32 @@
+x-runtime: &runtime
+  image: applykit:local
+  build: .
+  init: true
+  restart: unless-stopped
+  stop_grace_period: 30s
+  depends_on:
+    postgres:
+      condition: service_healthy
+  volumes:
+    - type: bind
+      source: ./data/profile.json
+      target: /app/data/profile.json
+      read_only: true
+      bind:
+        create_host_path: false
+    - applykit-cvs:/app/data/cvs
+
+x-database: &database
+  POSTGRES_HOST: postgres
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env}
+
 services:
   postgres:
     image: postgres:17
+    restart: unless-stopped
     environment:
       POSTGRES_USER: applykit
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in config/.env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env}
       POSTGRES_DB: applykit
     ports:
       - "127.0.0.1:54329:5432"
@@ -14,5 +37,107 @@ services:
       interval: 5s
       timeout: 5s
       retries: 12
+
+  app:
+    <<: *runtime
+    environment:
+      <<: *database
+      BACKEND_HOST: 0.0.0.0
+      BACKEND_PORT: ${BACKEND_PORT:-3333}
+    ports:
+      - "127.0.0.1:${BACKEND_PORT:-3333}:${BACKEND_PORT:-3333}"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "--input-type=module",
+          "-e",
+          "const r=await fetch('http://127.0.0.1:'+process.env.BACKEND_PORT+'/api/health',{signal:AbortSignal.timeout(4000)});if(!r.ok)process.exit(1)",
+        ]
+      interval: 10s
+      timeout: 5s
+      start_period: 30s
+      retries: 6
+
+  worker:
+    <<: *runtime
+    command: ["node", "backend/dist/worker.js"]
+    # Chromium's sandbox requires this capability inside Docker. Do not disable it.
+    cap_add: [SYS_ADMIN]
+    shm_size: 1gb
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      <<: *database
+      CV_PROVIDER: ${CV_PROVIDER:-codex}
+      CV_CONCURRENCY: ${CV_CONCURRENCY:-1}
+      CODEX_EXECUTABLE: codex
+      CODEX_MODEL: ${CODEX_MODEL:-}
+      CLAUDE_EXECUTABLE: claude
+      CLAUDE_MODEL: ${CLAUDE_MODEL:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-flash-latest}
+      GEMINI_API_KEY_WRITER: ${GEMINI_API_KEY_WRITER:-}
+      GEMINI_API_KEY_REVIEWER: ${GEMINI_API_KEY_REVIEWER:-}
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://host.docker.internal:11434}
+      OLLAMA_MODEL_WRITER: ${OLLAMA_MODEL_WRITER:-qwen3.5:9b}
+      OLLAMA_MODEL_REVIEWER: ${OLLAMA_MODEL_REVIEWER:-qwen3.5:9b}
+      LLM_API_URL: ${LLM_API_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      LLM_API_KEY_WRITER: ${LLM_API_KEY_WRITER:-}
+      LLM_API_KEY_REVIEWER: ${LLM_API_KEY_REVIEWER:-}
+      LLM_RESPONSE_FORMAT: ${LLM_RESPONSE_FORMAT:-json_object}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - type: bind
+        source: ./data/profile.json
+        target: /app/data/profile.json
+        read_only: true
+        bind:
+          create_host_path: false
+      - applykit-cvs:/app/data/cvs
+      - applykit-cli:/home/node
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "backend/dist/infrastructure/queue/healthcheck.js",
+          "worker",
+        ]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 4
+
+  telegram:
+    <<: *runtime
+    profiles: [telegram]
+    command: ["node", "backend/dist/bot.js"]
+    depends_on:
+      app:
+        condition: service_healthy
+    environment:
+      <<: *database
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "backend/dist/infrastructure/queue/healthcheck.js",
+          "telegram",
+        ]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 4
+
 volumes:
   applykit-postgres:
+  applykit-cvs:
+  applykit-cli:

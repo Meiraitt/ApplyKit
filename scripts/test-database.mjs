@@ -2,7 +2,7 @@ import pg from "../backend/node_modules/pg/lib/index.js";
 import { config } from "../backend/node_modules/dotenv/lib/main.js";
 import { fileURLToPath } from "node:url";
 
-config({ path: fileURLToPath(new URL("../config/.env", import.meta.url)) });
+config({ path: fileURLToPath(new URL("../.env", import.meta.url)) });
 
 export async function prepareTestDatabase() {
   if (!process.env.DATABASE_URL)

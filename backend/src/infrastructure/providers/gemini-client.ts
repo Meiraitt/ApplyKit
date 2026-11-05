@@ -139,7 +139,7 @@ export function createGeminiClient(options: {
 
     if (!key)
       throw new GeminiError(
-        `Set GEMINI_API_KEY_${role === "writer" ? "WRITER" : "REVIEWER"} in config/.env.`,
+        `Set GEMINI_API_KEY_${role === "writer" ? "WRITER" : "REVIEWER"} in .env.`,
       );
 
     if (count >= (options.maxCalls ?? 6))

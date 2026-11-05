@@ -20,3 +20,11 @@ PostgreSQL stores jobs, generations, review/checkpoint data and Telegram state. 
 Codex, Claude and compatible APIs share the complete-CV generation/review contract. Gemini has a separate native transport and complete-CV loop. Ollama supports a smaller-model planning/composition path with claim-level checks. Provider availability does not establish equal output quality.
 
 Generation snapshots and versioned artifacts are retained. Incremental corrections start from a previous draft and feedback. Application records can reference the version actually used.
+
+## Container runtime
+
+`compose.yaml` runs PostgreSQL, the API/static frontend, and a separate worker from one multi-stage image. Telegram is an opt-in profile. Only API/database ports are published, bound to localhost. The API waits for a healthy database; worker/bot wait for a healthy API so migrations complete first.
+
+The root `.env` is the only configuration file. Compose projects selected variables into each service, never into the image. `POSTGRES_HOST` selects the internal database address; native development uses `DATABASE_URL`. PostgreSQL, documents and CLI authentication use separate named volumes. The profile is a read-only bind mount. The worker runs as a non-root user with Chromium's sandbox enabled.
+
+`npm start` remains the native hot-reload launcher and starts only PostgreSQL through Compose when needed. Do not run both workers against the same database. Switching to containers does not migrate host artifacts automatically.

@@ -13,7 +13,7 @@ export function parseProvider(value = "codex"): Provider {
 
   if (!providers.includes(provider as Provider)) {
     throw new Error(
-      "Invalid CV_PROVIDER. Use codex, claude, gemini, ollama or compatible in config/.env.",
+      "Invalid CV_PROVIDER. Use codex, claude, gemini, ollama or compatible in .env.",
     );
   }
 

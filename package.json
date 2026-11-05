@@ -16,8 +16,11 @@
     "lint:fix": "node scripts/lint.mjs --fix",
     "format": "node scripts/format.mjs --write",
     "format:check": "node scripts/format.mjs --check",
-    "db:up": "docker compose --env-file config/.env up -d postgres",
-    "db:stop": "docker compose --env-file config/.env stop postgres"
+    "db:up": "docker compose --env-file .env up -d postgres",
+    "db:stop": "docker compose --env-file .env stop postgres",
+    "test:setup": "node --test scripts/configure.test.mjs",
+    "test:docker": "node scripts/docker-smoke.mjs",
+    "configure": "node scripts/configure.mjs"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5.10.0",

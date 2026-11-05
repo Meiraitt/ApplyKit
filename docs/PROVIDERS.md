@@ -1,6 +1,6 @@
 # AI providers
 
-All settings live in `config/.env`. Process environment variables take precedence. Restart after changes. Only the selected provider must be configured.
+All settings live in `.env`. Process environment variables take precedence. Restart after changes. Only the selected provider must be configured.
 
 | CV_PROVIDER | Required settings                                            | Protocol                           |
 | ----------- | ------------------------------------------------------------ | ---------------------------------- |
