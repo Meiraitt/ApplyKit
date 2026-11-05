@@ -1,6 +1,6 @@
 # AI providers
 
-All settings live in `config/.env`. Process environment variables take precedence. Restart after changes. Only the selected provider must be configured.
+All settings live in `.env`. Process environment variables take precedence. Restart after changes. Only the selected provider must be configured.
 
 | CV_PROVIDER | Required settings                                            | Protocol                           |
 | ----------- | ------------------------------------------------------------ | ---------------------------------- |
@@ -11,6 +11,8 @@ All settings live in `config/.env`. Process environment variables take precedenc
 | compatible  | LLM_API_URL, LLM_MODEL, LLM_API_KEY or role keys             | OpenAI-compatible Chat Completions |
 
 ## CLI agents
+
+Docker includes pinned Codex and Claude binaries. Authenticate inside the worker using the commands in the [README](../README.md#choose-one-ai-provider); credentials persist in the private CLI volume. Host executable paths are ignored in containers. Run `docker compose exec worker node backend/dist/doctor.js` for container diagnostics.
 
 Install and authenticate the CLI on your machine. Set its executable on PATH or provide an absolute path. No subscription or credentials are included with this project. Run `npm run doctor` for local diagnostics; a successful executable check does not guarantee authentication, quota or model access.
 

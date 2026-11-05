@@ -5,7 +5,7 @@ import { boss, startQueue } from "./infrastructure/queue/queue.js";
 
 await migrate();
 await startQueue();
-const server = createApp().listen(env.port, "127.0.0.1", () =>
+const server = createApp().listen(env.port, env.host, () =>
   console.log(`ApplyKit: http://127.0.0.1:${env.port}`),
 );
 

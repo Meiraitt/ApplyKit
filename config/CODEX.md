@@ -1,6 +1,8 @@
 # Codex CLI
 
-Set `CV_PROVIDER=codex` in `config/.env`, install/authenticate Codex and set `CODEX_EXECUTABLE` if it is not on PATH. `CODEX_MODEL` is optional.
+Set `CV_PROVIDER=codex` in `.env`, install/authenticate Codex and set `CODEX_EXECUTABLE` if it is not on PATH. `CODEX_MODEL` is optional.
+
+With Docker, the binary is included. Run `docker compose exec worker codex login --device-auth` and follow the login flow. Credentials persist in the private CLI volume. Docker uses its Linux executable independently of the host installation.
 
 The adapter uses structured JSON output, an isolated temporary working directory, restricted tools and completion-event validation. Candidate facts and job text are passed explicitly; the model must not read unrelated files or use conversation memory.
 

@@ -34,8 +34,10 @@ if (
     if (!["build", "test", "check"].includes(task))
       throw new Error("Use build, check or test.");
 
-    if (task === "test")
+    if (task === "test") {
+      await run("scripts/configure.test.mjs");
       await (await import("./test-database.mjs")).prepareTestDatabase();
+    }
 
     if (task === "build") {
       // Fixed build output only; never touch data, source or configured artifact paths.

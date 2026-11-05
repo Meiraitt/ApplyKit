@@ -12,7 +12,7 @@ await ensureNode24();
 
 const root = resolve(fileURLToPath(new URL("..", import.meta.url)));
 
-config({ path: resolve(root, "config/.env") });
+config({ path: resolve(root, ".env") });
 const args = new Set(process.argv.slice(2));
 const node = existsSync(resolve(root, "runtime/node.exe"))
   ? resolve(root, "runtime/node.exe")
@@ -257,7 +257,7 @@ async function main() {
     return;
   }
 
-  for (const file of [node, tsx, vite, resolve(root, "config/.env")])
+  for (const file of [node, tsx, vite, resolve(root, ".env")])
     if (!existsSync(file))
       throw Error("Missing dependency. Run npm run setup: " + file);
 
@@ -292,7 +292,7 @@ async function main() {
       try {
         await exec(
           "docker",
-          ["compose", "--env-file", "config/.env", "up", "-d", "postgres"],
+          ["compose", "--env-file", ".env", "up", "-d", "postgres"],
           {
             cwd: root,
             windowsHide: true,
@@ -317,7 +317,7 @@ async function main() {
 
       if (running)
         throw Error(
-          "PostgreSQL is running, but connection failed. Check config/.env.",
+          "PostgreSQL is running, but connection failed. Check .env.",
         );
       log("postgres", "Starting local database...");
       // pg_ctl runs detached on Windows so terminal Ctrl+C is handled by this supervisor.

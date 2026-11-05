@@ -6,9 +6,12 @@ runtime
 data
 release
 coverage
-config/.env
+.env
 config/*.env
 
 .maintenance
 
 source-manifest.json
+
+*.dump
+cv-backup

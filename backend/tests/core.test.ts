@@ -3,7 +3,7 @@ import request from "supertest";
 import { config } from "dotenv";
 
 config({
-  path: new URL("../../config/.env", import.meta.url).pathname.replace(
+  path: new URL("../../.env", import.meta.url).pathname.replace(
     /^\/([A-Z]:)/,
     "$1",
   ),

@@ -7,7 +7,7 @@ import { parseProvider } from "./provider-config.js";
 export const root = resolve(
   fileURLToPath(new URL("../../..", import.meta.url)),
 );
-config({ path: resolve(root, "config/.env") });
+config({ path: resolve(root, ".env") });
 
 export const env = {
   claudeExecutable: process.env.CLAUDE_EXECUTABLE ?? "claude",
@@ -31,10 +31,13 @@ export const env = {
   geminiWriterKey: process.env.GEMINI_API_KEY_WRITER ?? "",
   geminiReviewerKey: process.env.GEMINI_API_KEY_REVIEWER ?? "",
   databaseUrl:
-    process.env.DATABASE_URL ??
-    "postgresql://applykit@127.0.0.1:54329/applykit",
+    process.env.DATABASE_URL ||
+    (process.env.POSTGRES_HOST
+      ? `postgresql://applykit:${encodeURIComponent(process.env.POSTGRES_PASSWORD ?? "")}@${process.env.POSTGRES_HOST}:5432/applykit`
+      : "postgresql://applykit@127.0.0.1:54329/applykit"),
+  host: process.env.BACKEND_HOST || "127.0.0.1",
   port: Number(process.env.BACKEND_PORT ?? 3333),
-  ollamaHost: process.env.OLLAMA_HOST ?? "http://127.0.0.1:11434",
+  ollamaHost: process.env.OLLAMA_HOST || "http://127.0.0.1:11434",
   writerModel: process.env.OLLAMA_MODEL_WRITER ?? "qwen2.5:7b-instruct",
   reviewerModel: process.env.OLLAMA_MODEL_REVIEWER ?? "qwen2.5:7b-instruct",
   telegramToken: process.env.TELEGRAM_BOT_TOKEN,
